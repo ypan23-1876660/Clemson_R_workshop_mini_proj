@@ -30,10 +30,22 @@ parsing <- createDataPartition(y=df1$category, p=0.6, list = FALSE)
 training <- df1[parsing,]
 testing <- df1[-parsing,]
 
-#Building the model
-model <- train(category~., 
-               data = training,
-               method = 'rf',
-               prox = TRUE)
+#Separating out the predictor: category
+train_class <- training$category
+train_data <- training[,-1]
+install.packages("e1071")
 
+#Building the model
+#model <- train(train_data,train_class,method = 'rf',prox = TRUE)
+model2 <- randomForest(train_data, train_class, proximity = TRUE)
+
+
+#Applying model to predict the output on testing data set
+testing_class <- testing$category
+testing_data <- testing[,-1]
+predict_df <- predict(model2, testing_data)
+
+
+#Evaluating accuracy 
+confusionMatrix(predict_df, testing_class)
 #predict_model <- predict(model, testing)
