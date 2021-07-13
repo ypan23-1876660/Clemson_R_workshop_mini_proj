@@ -1,7 +1,7 @@
 # Clemson_R_workshop_mini_proj
 Mini project for Clemson CITI R workshop. 
 
-Objective: Predict if the unknown gene is categorized into "P" or "E"
+Objective: Predict if the unknown cell is categorized into "P" or "E" based on gene expression
 
 Explaination: I will be using the data from Mackay-Anholt lab, where the value in the data represents the gene expression of Placentae and Endometrium in cells.
 The machine will be trained based on the level of gene expression (high or low) to determine if the cells are Placantae or Endometrium.
