@@ -1,6 +1,3 @@
-#You could try P vs E or L vs H for the two classes. Probably better wtih P v E. (placentae vs endometrium)
-rm(list=ls())
-
 library(data.table)
 library(stringr)
 library(randomForest)
@@ -33,19 +30,21 @@ testing <- df1[-parsing,]
 #Separating out the predictor: category
 train_class <- training$category
 train_data <- training[,-1]
-install.packages("e1071")
+#install.packages("e1071")
 
-#Building the model
+#Building the model using caret, but took too long
 #model <- train(train_data,train_class,method = 'rf',prox = TRUE)
-model2 <- randomForest(train_data, train_class, proximity = TRUE)
+#Building the model using Random Forest Pacakge
+model <- randomForest(train_data, train_class, proximity = TRUE)
 
 
 #Applying model to predict the output on testing data set
 testing_class <- testing$category
 testing_data <- testing[,-1]
-predict_df <- predict(model2, testing_data)
+predict_df <- predict(model, testing_data)
 
 
-#Evaluating accuracy 
+#Evaluating accuracy using Confusion Matrix
 confusionMatrix(predict_df, testing_class)
-#predict_model <- predict(model, testing)
+
+
