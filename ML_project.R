@@ -16,7 +16,7 @@ df <- transpose(data)
 rownames(df) <- colnames(data)
 colnames(df) <- rownames(data)
 
-#Create a vector that is factor for category 
+#Create a vector that is factor for category/class (PE) 
 category <- rownames(df)
 df1 <- cbind(category, df)
 PE <- substring(df1$category, 1, 1)
@@ -27,7 +27,7 @@ parsing <- createDataPartition(y=df1$category, p=0.6, list = FALSE)
 training <- df1[parsing,]
 testing <- df1[-parsing,]
 
-#Separating out the predictor: category
+#Separating out the predictor: category/class
 train_class <- training$category
 train_data <- training[,-1]
 #install.packages("e1071")
