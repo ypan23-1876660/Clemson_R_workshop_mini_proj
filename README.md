@@ -9,4 +9,4 @@ The predictand will be the gene expression, and the predictor will be the class 
 
 Output: The output wil be Classification
 
-Result: After validating by the confusion Matrix, where the accuracy is 1, we can conclude that this ML model 
+Result: After validating by the confusion Matrix, where the accuracy is 1, we can conclude that this ML model. The dataset can be a very good data set if it is just determining P or E because the gene expression level is pretty extreme. 
