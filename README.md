@@ -1,4 +1,4 @@
-# Clemson_R_workshop_mini_proj
+# Clemson_R_Machine_Learning_workshop_mini_proj
 Mini project for Clemson CITI R workshop. 
 
 Objective: Predict if the unknown cell is categorized into "P" or "E" based on gene expression
